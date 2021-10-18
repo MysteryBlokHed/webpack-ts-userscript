@@ -18,10 +18,8 @@ const banner = `
 /** The name of the generated Userscript file */
 const outFile = `${package.name}.user.js`
 
-console.log(__dirname)
-
 module.exports = {
-  entry: './build/index.js',
+  entry: path.resolve(__dirname, 'build/index.js'),
   output: {
     filename: outFile,
     path: path.resolve(__dirname, 'build'),
