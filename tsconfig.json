@@ -3,7 +3,7 @@
   "include": ["src/**/*"],
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2021",
     "lib": ["dom", "es6"],
     "noImplicitAny": true,
     "strictNullChecks": true,
