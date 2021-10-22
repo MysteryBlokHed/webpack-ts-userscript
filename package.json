@@ -9,7 +9,7 @@
   "license": "MIT OR Apache-2.0",
   "scripts": {
     "build": "tsc && webpack",
-    "dev": "nodemon -w src -e ts --exec \"yarn build\" || exit 1"
+    "dev": "nodemon -w src -e ts --exec \"yarn build || exit 1\""
   },
   "devDependencies": {
     "nodemon": "^2.0.13",
