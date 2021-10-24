@@ -40,6 +40,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.50.tgz#1e0caa9364d3fccd2931c3ed96fdbeaa5d4cca83"
   integrity sha512-C6N5s2ZFtuZRj54k2/zyRhNDjJwwcViAM3Nbm8zjBpbqAdZ00mr0CFxvSKeO8Y/e03WVFLpQMdHYVfUd6SB+Hw==
 
+"@types/greasemonkey@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/greasemonkey/-/greasemonkey-4.0.2.tgz#cb378ee2b0d567ab988819ed4abe65a950afa352"
+  integrity sha512-aCdl08liJA/GaT5xH8bhqbGCG6HCRU/jqs3QuJcMOsSxBDgbiif3LVLI7AF7FekPN3XxGevRHSw7ov8ITKf4Hw==
+
 "@types/json-schema@*", "@types/json-schema@^7.0.8":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
