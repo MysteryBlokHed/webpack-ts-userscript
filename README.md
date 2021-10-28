@@ -41,6 +41,11 @@ yarn dev
 This will output files in the `build/` directory, including `webpack-ts-userscript.user.js`, which is the UserScript.
 Opening this file in your browser with a UserScript extension installed should prompt you to install it.
 
+## Installation
+
+Open a built UserScript in a new browser tab with a UserScript extension installed
+and you should be prompted to install the script.
+
 ## License
 
 This template is licensed under either of
