@@ -38,13 +38,15 @@ To automatically build when a source file is modified, run:
 yarn dev
 ```
 
-This will output files in the `build/` directory, including `webpack-ts-userscript.user.js`, which is the UserScript.
-Opening this file in your browser with a UserScript extension installed should prompt you to install it.
+Building will result in JavaScript files in the `build/` directory (these can be ignored)
+and a file ending in `.user.js` in the root of the project.
+This is the built UserScript.
 
 ## Installation
 
-Open a built UserScript in a new browser tab with a UserScript extension installed
-and you should be prompted to install the script.
+Open the UserScript from the repository as raw with a UserScript extension installed,
+and you should be prompted to install it. You can install a locally built version
+by dragging and dropping the file into a new browser tab.
 
 ## License
 
