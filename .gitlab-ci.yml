@@ -17,6 +17,7 @@ cache:
       - tsconfig.json
       - webpack.config.js
       - .gitlab-ci.yml
+      - .prettier*
 
 lint:
   stage: lint

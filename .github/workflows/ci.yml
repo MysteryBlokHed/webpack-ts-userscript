@@ -8,6 +8,7 @@ on:
       - tsconfig.json
       - webpack.config.js
       - .gitlab-ci.yml
+      - .prettier*
   pull_request:
     branches: [main]
     paths:
@@ -16,6 +17,7 @@ on:
       - tsconfig.json
       - webpack.config.js
       - .gitlab-ci.yml
+      - .prettier*
 
 jobs:
   lint_and_build:
