@@ -7,7 +7,7 @@ on:
       - package.json
       - tsconfig.json
       - webpack.config.js
-      - .gitlab-ci.yml
+      - .github/workflows/*
       - .prettier*
   pull_request:
     branches: [main]
@@ -16,7 +16,7 @@ on:
       - package.json
       - tsconfig.json
       - webpack.config.js
-      - .gitlab-ci.yml
+      - .github/workflows/*
       - .prettier*
 
 jobs:
