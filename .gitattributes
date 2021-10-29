@@ -1,1 +1,1 @@
-webpack.config.js linguist-detectable=false
+*.js            linguist-detectable=false
