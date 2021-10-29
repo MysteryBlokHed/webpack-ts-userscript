@@ -22,7 +22,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'build/index.js'),
   output: {
     filename: outFile,
-    path: path.resolve(__dirname, 'build'),
+    path: __dirname,
   },
   plugins: [
     new webpack.BannerPlugin({
@@ -49,5 +49,6 @@ module.exports = {
       }),
     ],
   },
-  mode: 'production',
+  mode: 'development',
+  devtool: false,
 }
