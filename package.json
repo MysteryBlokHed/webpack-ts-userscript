@@ -6,7 +6,7 @@
   "private": true,
   "repository": "https://github.com/MysteryBlokHed/webpack-ts-userscript",
   "author": "Adam Thompson-Sharpe",
-  "license": "MIT OR Apache-2.0",
+  "license": "MIT",
   "scripts": {
     "build": "tsc && webpack",
     "dev": "nodemon -w src -e ts --exec \"yarn build || exit 1\"",
