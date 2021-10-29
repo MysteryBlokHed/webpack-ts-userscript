@@ -6,6 +6,7 @@ stages:
 
 cache:
   paths:
+    - build/
     - node_modules/
     - .yarn-cache/
 
