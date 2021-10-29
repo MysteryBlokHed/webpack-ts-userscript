@@ -1,0 +1,50 @@
+name: CI
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/**/*
+      - package.json
+      - tsconfig.json
+      - webpack.config.js
+      - .github/workflows/*
+      - .prettier*
+  pull_request:
+    branches: [main]
+    paths:
+      - src/**/*
+      - package.json
+      - tsconfig.json
+      - webpack.config.js
+      - .github/workflows/*
+      - .prettier*
+
+jobs:
+  lint_and_build:
+    name: Lint And Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+
+      - name: Yarn cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            build/
+            node_modules/
+            .yarn-cache/
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --cache-folder .yarn-cache
+
+      - name: Lint
+        run: yarn lint --check
+
+      - name: Build
+        run: yarn build

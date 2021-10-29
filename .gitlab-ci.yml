@@ -1,0 +1,36 @@
+image: node:latest
+
+stages:
+  - lint
+  - build
+
+cache:
+  paths:
+    - build/
+    - node_modules/
+    - .yarn-cache/
+
+.base:
+  only:
+    changes:
+      - src/**/*
+      - package.json
+      - tsconfig.json
+      - webpack.config.js
+      - .gitlab-ci.yml
+      - .prettier*
+
+lint:
+  stage: lint
+  extends: .base
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - yarn lint --check
+
+test_build:
+  stage: build
+  extends: .base
+  script:
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - yarn install --cache-folder .yarn-cache
+    - yarn build
