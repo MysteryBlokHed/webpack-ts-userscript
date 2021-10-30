@@ -14,7 +14,7 @@ const bannerValues = {
   author: package.author,
   license: package.license,
   homepageURL: package.homepage,
-  match: ['*://example.com/*', 'http://*.foo.com/bar*'],
+  match: ['*://example.com/*', 'https://*.foo.com/bar*'],
 }
 
 /** The generated UserScript banner */
@@ -25,11 +25,14 @@ const banner = (() => {
     `// @${prop}${' '.repeat(12 - prop.length)}${value}\n`
 
   for (const [key, value] of Object.entries(bannerValues)) {
+    if (!value) continue
+
     if (typeof value === 'string') {
-      final += value ? format(key, value) : ''
+      final += format(key, value)
     } else {
       for (const val of value) {
-        final += val ? format(key, val) : ''
+        if (!val) continue
+        final += format(key, val)
       }
     }
   }
