@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/greasemonkey": "^4.0.2",
+    "greasetools": "git+https://gitlab.com/MysteryBlokHed/greasetools.git",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "terser-webpack-plugin": "^5.2.4",
