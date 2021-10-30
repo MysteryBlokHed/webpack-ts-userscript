@@ -81,7 +81,7 @@ by dragging and dropping the file into a new browser tab.
 
 This project was created from [a template](https://gitlab.com/MysteryBlokHed/webpack-ts-userscript)
 licensed under the MIT license
-([LICENSE](<[LICENSE](https://gitlab.com/MysteryBlokHed/webpack-ts-userscript/-/blob/main/LICENSE)>)
+([LICENSE](https://gitlab.com/MysteryBlokHed/webpack-ts-userscript/-/blob/main/LICENSE)
 or <http://opensource.org/licenses/MIT>).
 
 [webpack config]: webpack.config.js
