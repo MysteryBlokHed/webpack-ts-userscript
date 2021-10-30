@@ -3,17 +3,40 @@ const TerserPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
 const package = require('./package.json')
 
-/** The UserScript info to add to the top of the outputted file */
-const banner = `
-// ==UserScript==
-// @name        ${package.name}
-// @description ${package.description}
-// @version     ${package.version}
-// @author      ${package.author}
-// @match       *://example.com/*
-// @grant       none
-// ==/UserScript==
-`
+/**
+ * Values to add to the banner.
+ * More info in template README.md
+ */
+const bannerValues = {
+  name: package.name,
+  descripton: package.description,
+  version: package.version,
+  author: package.author,
+  license: package.license,
+  homepageURL: package.homepage,
+  match: ['*://example.com/*', 'http://*.foo.com/bar*'],
+}
+
+/** The generated UserScript banner */
+const banner = (() => {
+  let final = '// ==UserScript==\n'
+
+  const format = (prop, value) =>
+    `// @${prop}${' '.repeat(12 - prop.length)}${value}\n`
+
+  for (const [key, value] of Object.entries(bannerValues)) {
+    if (typeof value === 'string') {
+      final += value ? format(key, value) : ''
+    } else {
+      for (const val of value) {
+        final += val ? format(key, val) : ''
+      }
+    }
+  }
+
+  final += '// ==/UserScript==\n'
+  return final
+})()
 
 /** The name of the generated Userscript file */
 const outFile = `${package.name}.user.js`
