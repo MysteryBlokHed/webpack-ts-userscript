@@ -11,6 +11,13 @@ A template to create UserScripts using TypeScript and Webpack.
 The UserScript's name, description, version, and author are all retrieved from the project's `package.json`.
 Anything else such as the site to match and the grants are changed from the [Webpack Config].
 
+### Creating a release commit
+
+To create a commit for a release version, run `yarn release`.
+This will re-build the UserScript in production mode, add all files with `git add .`,
+and prompt you to add a version to the commit message.
+You can then create a new tag and release for your project with an optimized UserScript.
+
 <!-- These instructions can be updated to fit your project's requirements -->
 
 ## Building

@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc && webpack",
     "dev": "nodemon -w src -e ts --exec \"yarn build || exit 1\"",
-    "lint": "prettier \"**/*.{js,ts,json,md,yml}\""
+    "lint": "prettier \"**/*.{js,ts,json,md,yml}\"",
+    "release": "yarn build --mode production && git add . && git commit -m \":bookmark: Release <version>\" --edit"
   },
   "devDependencies": {
     "@types/greasemonkey": "^4.0.2",
