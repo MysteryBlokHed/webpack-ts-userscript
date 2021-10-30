@@ -79,7 +79,9 @@ by dragging and dropping the file into a new browser tab.
 
 ## License
 
-This template is licensed under the MIT license
-([LICENSE](LICENSE) or <http://opensource.org/licenses/MIT>).
+This project was created from [a template](https://gitlab.com/MysteryBlokHed/webpack-ts-userscript)
+licensed under the MIT license
+([LICENSE](<[LICENSE](https://gitlab.com/MysteryBlokHed/webpack-ts-userscript/-/blob/main/LICENSE)>)
+or <http://opensource.org/licenses/MIT>).
 
 [webpack config]: webpack.config.js
