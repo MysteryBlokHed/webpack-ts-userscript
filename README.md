@@ -11,18 +11,18 @@ A template to create UserScripts using TypeScript and Webpack.
 The UserScript's name, description, version, and author are all retrieved from the project's `package.json`.
 Anything else such as the site to match and the grants are changed from the [Webpack Config].
 
-There's an object called `bannerValues` in the Webpack config that can be used to change the values
-added to the banner. To add a single value, add a string key and value. To add multiple values for
+There's a call to `genBanner` that can be used to change the values added to the banner.
+To add a single value, add a string key and value. To add multiple values for
 the same key (eg. multiple `@match`'s), use an array as the value.
 
 Example:
 
 ```javascript
-const bannerValues = {
+const banner = genBanner({
   name: 'my-userscript',
   version: '0.1.0',
   match: ['*://example.com/*', 'https://*.foo.com/bar*'],
-}
+})
 
 /* Above example becomes: */
 // ==UserScript==
