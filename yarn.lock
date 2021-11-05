@@ -676,9 +676,10 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.4:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
 
-"greasetools@git+https://gitlab.com/MysteryBlokHed/greasetools.git":
-  version "0.1.0"
-  resolved "git+https://gitlab.com/MysteryBlokHed/greasetools.git#aa9df2f01684b508e636f92884a69358f961728c"
+greasetools@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/greasetools/-/greasetools-0.2.0.tgz#b9f51d274eb5773011d88caf505a79c3706ef6ef"
+  integrity sha512-qv4diVnh+Az2CBvQSAhlJEf0bFkNoFB1AUvmAOej6Bzt3Lgf4H3gv6FkJ9Xk/e2DaSEgLMQnVBGBEYOFtQ/9pw==
 
 has-flag@^3.0.0:
   version "3.0.0"
