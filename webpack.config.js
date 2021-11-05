@@ -2,12 +2,13 @@ const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
 const package = require('./package.json')
+const genBanner = require('greasetools').genBanner
 
 /**
  * Values to add to the banner.
  * More info in template README.md
  */
-const bannerValues = {
+const banner = genBanner({
   name: package.name,
   descripton: package.description,
   version: package.version,
@@ -15,31 +16,7 @@ const bannerValues = {
   license: package.license,
   homepageURL: package.homepage,
   match: ['*://example.com/*', 'https://*.foo.com/bar*'],
-}
-
-/** The generated UserScript banner */
-const banner = (() => {
-  let final = '// ==UserScript==\n'
-
-  const format = (prop, value) =>
-    `// @${prop}${' '.repeat(12 - prop.length)}${value}\n`
-
-  for (const [key, value] of Object.entries(bannerValues)) {
-    if (!value) continue
-
-    if (typeof value === 'string') {
-      final += format(key, value)
-    } else {
-      for (const val of value) {
-        if (!val) continue
-        final += format(key, val)
-      }
-    }
-  }
-
-  final += '// ==/UserScript==\n'
-  return final
-})()
+})
 
 /** The name of the generated Userscript file */
 const outFile = `${package.name}.user.js`
