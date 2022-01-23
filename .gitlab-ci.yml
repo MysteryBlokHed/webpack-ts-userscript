@@ -21,19 +21,19 @@ cache:
 
 yarn_install:
   stage: install
-  only: *changes
+  rules: [changes: *changes]
   script:
     - yarn --frozen-lockfile --check-files --cache-folder .yarn-cache install
 
 lint:
   stage: lint
-  only: *changes
+  rules: [changes: *changes]
   script:
     - yarn lint --check
 
 test_build:
   stage: build
-  only: *changes
+  rules: [changes: *changes]
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider
     - yarn build
