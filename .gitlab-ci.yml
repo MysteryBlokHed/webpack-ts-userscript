@@ -1,6 +1,7 @@
 image: node:latest
 
 stages:
+  - install
   - lint
   - build
 
@@ -10,27 +11,29 @@ cache:
     - node_modules/
     - .yarn-cache/
 
-.base:
-  only:
-    changes:
-      - src/**/*
-      - package.json
-      - tsconfig.json
-      - webpack.config.js
-      - .gitlab-ci.yml
-      - .prettier*
+.changes: &changes
+  - src/**/*
+  - package.json
+  - tsconfig.json
+  - webpack.config.js
+  - .gitlab-ci.yml
+  - .prettier*
+
+yarn_install:
+  stage: install
+  only: *changes
+  script:
+    - yarn --frozen-lockfile --check-files --cache-folder .yarn-cache install
 
 lint:
   stage: lint
-  extends: .base
+  only: *changes
   script:
-    - yarn install --cache-folder .yarn-cache
     - yarn lint --check
 
 test_build:
   stage: build
-  extends: .base
+  only: *changes
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider
-    - yarn install --cache-folder .yarn-cache
     - yarn build
