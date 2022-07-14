@@ -2,15 +2,10 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src/**/*"],
   "compilerOptions": {
+    "strict": true,
     "module": "commonjs",
     "target": "es2021",
     "lib": ["dom", "es6"],
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "build/",
     "incremental": true
