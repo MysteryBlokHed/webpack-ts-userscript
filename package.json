@@ -16,7 +16,7 @@
   "devDependencies": {
     "@types/greasemonkey": "^4.0.2",
     "greasetools": "^0.2.0",
-    "nodemon": "^2.0.13",
+    "nodemon": "^2.0.19",
     "prettier": "^2.4.1",
     "terser-webpack-plugin": "^5.2.4",
     "typescript": "^4.4.4",
